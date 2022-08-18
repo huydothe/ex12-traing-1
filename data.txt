@@ -1,0 +1,13 @@
+use QuanLySinhVien;
+select Address, count(StudentID) as 'So luong hoc vien'
+from Student
+group by Address;
+
+select s.StudentID, s.StudentName, avg(Mark)
+from Student s join Mark m on s.StudentID = m.StudentID
+group by s.StudentID, s.StudentName;
+
+select s.StudentID, s.StudentName, avg(Mark)
+from Student s join Mark m on s.StudentID = m.StudentID
+group by s.StudentID, s.StudentName
+having avg(Mark)>=10;
